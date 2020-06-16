@@ -1,0 +1,17 @@
+type: code
+custom_name: Guest list of a hotel
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    //put imports you need here
+
+    class Main {
+        public static void main(String[] args) {
+            // put your code here
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9261
+status: Solved
+record: -1
