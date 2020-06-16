@@ -12,6 +12,18 @@ files:
     \ = from;\n\t\tthis.to = to;\n\t}\n\n\tpublic int getFrom() {\n\t\treturn from;\n\
     \t}\n\n\tpublic int getTo() {\n\t\treturn to;\n\t}\n\n}"
   learner_created: false
+- name: src/Main 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/2821
 status: Solved
 record: -1

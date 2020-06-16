@@ -3,6 +3,18 @@ files:
 - name: src/Test.java
   visible: true
   learner_created: true
+- name: src/Test 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5737
 status: Solved
 record: -1

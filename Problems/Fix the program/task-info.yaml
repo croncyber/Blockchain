@@ -8,6 +8,18 @@ files:
     \     int c = scanner.nextInt();\n\n        int sum = a - b - d;\n\n        System.out.println(sum);\
     \ \n    }\n}"
   learner_created: false
+- name: src/Main 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/3750
 status: Solved
 record: -1

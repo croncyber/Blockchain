@@ -13,6 +13,18 @@ files:
         }
     }
   learner_created: false
+- name: src/Main 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/2478
 status: Solved
 record: -1

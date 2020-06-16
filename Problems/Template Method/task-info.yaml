@@ -19,6 +19,18 @@ files:
     \ + \" wants to eat\");\n        System.out.println(author + \" decides to cook\
     \ meal\");\n        meal.doMeal();\n    }\n}"
   learner_created: false
+- name: src/Main 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5202
 status: Solved
 record: -1

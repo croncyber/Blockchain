@@ -1,12 +1,23 @@
 package blockchain;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-public class Blockchain {
+import java.io.Serializable;
+import java.time.LocalTime;
+import java.util.*;
+
+public class Blockchain implements Serializable {
+
+    private static int zeroCount;
+
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter how many zeros the hash must starts with:");
+        zeroCount = scanner.nextInt();
+    }
+
     private final List<Block> blockchainList = new ArrayList<>();
     private int id = 1;
+
 
     public List<Block> getBlockchainList() {
         return blockchainList;
@@ -23,12 +34,19 @@ public class Blockchain {
     }
 
     public class Block {
+
         private final long timeStamp;
         private final int id;
         private final String previousHash;
         private final String currentHash;
+        private final LocalTime localTimeStart;
+        private final LocalTime localTimeEnd;
+        private int magicNumber = 9;
 
         Block(int id) {
+            localTimeStart = LocalTime.now();
+            Random random = new Random();
+
             this.timeStamp = new Date().getTime();
             this.id = id;
             if (id <= 1) {
@@ -36,7 +54,28 @@ public class Blockchain {
             } else previousHash = blockchainList.get(blockchainList.size() - 1).currentHash;
 
             String input = previousHash + timeStamp + id;
-            this.currentHash = StringUtil.applySha256(input);
+            StringBuilder prefix = new StringBuilder();
+
+            if (zeroCount > 0) {
+                for (int i = 0; i < zeroCount; i++) {
+                    prefix.append("0");
+                }
+
+            }
+
+
+
+            magicNumber = random.nextInt(100000000);
+            String s = StringUtil.applySha256(input + magicNumber);
+            while (!s.startsWith(prefix.toString())){
+                  magicNumber = random.nextInt(100000000);
+                 s = StringUtil.applySha256(input + magicNumber);
+                System.out.println(s);
+            }
+            this.currentHash = s;
+
+            localTimeEnd = LocalTime.now();
+
         }
 
         @Override
@@ -64,11 +103,14 @@ public class Blockchain {
 
         @Override
         public String toString() {
+            int difTime = localTimeEnd.toSecondOfDay() - localTimeStart.toSecondOfDay();
             return "Block:\n" +
                     "Id: " + id + "\n" +
                     "Timestamp: " + timeStamp + "\n" +
+                    "Magic number: " + magicNumber + "\n" +
                     "Hash of the previous block:\n" + previousHash + "\n" +
-                    "Hash of the block:\n" + currentHash + "\n";
+                    "Hash of the block:\n" + currentHash + "\n" +
+                    "Block was generating for " + difTime + " seconds\n" + "\n";
         }
     }
 }

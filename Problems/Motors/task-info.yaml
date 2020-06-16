@@ -21,6 +21,18 @@ files:
     \ = scanner.nextLong();\n        // write your code here ...\n        scanner.close();\n\
     \       System.out.println(motor);\n    }\n}"
   learner_created: false
+- name: src/Main 2.java
+  visible: true
+  learner_created: true
+- name: task-info 2.yaml
+  visible: true
+  learner_created: true
+- name: task 2.html
+  visible: true
+  learner_created: true
+- name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5768
 status: Solved
 record: -1
