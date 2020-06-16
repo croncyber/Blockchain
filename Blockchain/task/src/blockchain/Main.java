@@ -10,6 +10,7 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             if (blockchain.validate(blockchain.getBlockchainList().get(i))) {
                 System.out.println(blockchain.getBlockchainList().get(i).toString());
+
             }
         }
 
