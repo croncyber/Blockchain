@@ -3,19 +3,15 @@
 <html>
  <head></head>
  <body>
-  <p>You are given an interface named <code class="language-java">AccountService</code>. The interface has two abstract methods:</p> 
-  <ul> 
-   <li><code class="language-java">findAccountByOwnerId(long id)</code> that returns <code class="language-java">Account</code> found by owner id or <code class="language-java">null</code>.</li> 
-   <li><code class="language-java">countAccountsWithBalanceGreaterThan(long balance)</code> that returns the number of accounts with the balance greater than the passed value.</li> 
-  </ul> 
-  <p>There are also two other classes: <code class="language-java">Account</code> (id, balance, owner) and <code class="language-java">User</code> (id, firstName, lastName). See their implementations in the provided code template.</p> 
-  <p><strong>You need to implement the <code class="language-java">AccountService</code> interface and its two methods.</strong></p> 
-  <p>- Your implementation should be named <code class="language-java">AccountServiceImpl</code>.&nbsp;It should have a constructor with one argument — an array of accounts.</p> 
-  <p>- The implementation must keep the array inside.</p> 
-  <p>- The first method should search for an account by owner id in the array, the second one — count the number of accounts that meet the given condition in the array.</p> 
-  <p>Here's <strong>an example</strong> of an instance:</p> 
+  <p>Imagine an interface <code class="language-java">AccountService</code> that is designed for keeping track of accounts and balances.</p> 
+  <p>It has two abstract methods:<br> <code class="language-java">findAccountByOwnerId(long id)</code> takes user id and returns this user account or <code class="language-java">null</code> in case no account was found;<br> <code class="language-java">countAccountsWithBalanceGreaterThan(long balance)</code> returns the number of accounts with a balance exceeding the provided number.</p> 
+  <p>There are also two classes: <code class="language-java">Account</code> and <code class="language-java">User</code>, each of them having several fields. The <code class="language-java">owner</code> field of the <code class="language-java">Account</code> class is an object of the <code class="language-java">User</code> type. You can find the details in the provided template.</p> 
+  <p>Your task is to create <code class="language-java">AccountServiceImpl</code> class that implements <code class="language-java">AccountService</code> interface and its two methods.<br> It should have a constructor that takes an <code class="language-java">Account</code> array which will be used for searching when either of the methods is called.</p> 
+  <p>For example, to find an account by the user id we need to go through all the accounts from this array and compare these accounts owners id with the given id.</p> 
+  <p>Here's an example of how these methods will be called:</p> 
   <pre><code class="language-java">Account[] accounts = ...
-AccountService service = new AccountServiceImpl(accounts);</code></pre> 
+AccountService service = new AccountServiceImpl(accounts);
+service.findAccountByOwnerId(10L); // returns an account where owner id is 10</code></pre> 
   <p>Note: do not make classes and the interface <code class="language-java">public</code>.</p>
  </body>
 </html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>
