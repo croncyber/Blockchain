@@ -9,9 +9,6 @@ files:
         }
     }
   learner_created: false
-- name: src/Main 2.java
-  visible: true
-  learner_created: true
 - name: task-info 2.yaml
   visible: true
   learner_created: true
@@ -19,6 +16,9 @@ files:
   visible: true
   learner_created: true
 - name: task-remote-info 2.yaml
+  visible: true
+  learner_created: true
+- name: src/Main 2.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/8846
