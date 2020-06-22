@@ -21,7 +21,7 @@ interface AsyncMessageSender {
 }
 
 class AsyncMessageSenderImpl implements AsyncMessageSender {
-    private ExecutorService executor; // TODO initialize the executor
+    private ExecutorService executor;
     private final int repeatFactor;
 
     public AsyncMessageSenderImpl(int repeatFactor) {
