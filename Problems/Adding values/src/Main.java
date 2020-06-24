@@ -1,10 +1,10 @@
 import java.util.*;
-import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 
 public class Main {
 
     public static void addValueByIndex(long[] array, int index, long value) {
-
+        array[index] += value;
     }
 
     public static void main(String[] args) {
