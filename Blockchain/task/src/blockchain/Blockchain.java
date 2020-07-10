@@ -8,9 +8,9 @@ public class Blockchain {
     public List<Block> blockchainList = new ArrayList<>();
 
 
-    public synchronized List<Block> getBlockchainList() {
+/*    public synchronized List<Block> getBlockchainList() {
         return blockchainList;
-    }
+    }*/
 
     public synchronized void addBlock(Block block) {
 

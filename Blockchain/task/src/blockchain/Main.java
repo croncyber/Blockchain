@@ -1,8 +1,5 @@
 package blockchain;
 
-import javafx.concurrent.Task;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Callable;
@@ -16,23 +13,19 @@ public class Main {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         Set<Callable<Block>> blocks = new HashSet<>();
-
         for (int i = 0; i < 10; i++) {
             blocks.add(new Miner(blockchain, i));
         }
 
-
         for (int i = 0; i < 5; i++) {
             executorService.invokeAny(blocks);
         }
+        executorService.shutdownNow();
 
-        executorService.shutdown();
 
-
-        for (Block block:blockchain.blockchainList){
+        for (Block block : blockchain.blockchainList) {
             System.out.println(block.toString());
         }
-
 
 
     }

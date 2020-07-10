@@ -18,9 +18,7 @@ public class Block {
     private Blockchain blockchain;
 
 
-
-
-    Block(int id, Blockchain blockchain, int minerId) {
+    Block(Blockchain blockchain, int minerId) {
         localTimeStart = LocalTime.now();
 
         Random random = new Random();
@@ -28,7 +26,7 @@ public class Block {
         this.blockchain = blockchain;
         this.minerId = minerId;
         this.timeStamp = new Date().getTime();
-        this.id = id;
+        this.id = blockchain.blockchainList.size()+1;
 
         if (id <= 1) {
             this.previousHash = "0";
@@ -38,9 +36,7 @@ public class Block {
         StringBuilder prefix = new StringBuilder();
 
         if (blockchain.zeroCount.get() > 0) {
-            for (int i = 0; i < blockchain.zeroCount.get(); i++) {
-                prefix.append("0");
-            }
+            prefix.append("0".repeat(Math.max(0, blockchain.zeroCount.get())));
 
         }
 
